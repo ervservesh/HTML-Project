@@ -1,0 +1,389 @@
+*{ margin:0; padding:0; box-sizing: border-box;}
+
+
+@font-face {
+    font-family: 'OpenSansRegular';
+    src: url('../fonts/OpenSansRegular.eot');
+    src: url('../fonts/OpenSansRegular.eot') format('embedded-opentype'),
+         url('../fonts/OpenSansRegular.woff2') format('woff2'),
+         url('../fonts/OpenSansRegular.woff') format('woff'),
+         url('../fonts/OpenSansRegular.ttf') format('truetype'),
+         url('../fonts/OpenSansRegular.svg#OpenSansRegular') format('svg');
+}
+
+@font-face {
+    font-family: 'OpenSansSemibold';
+    src: url('../fonts/OpenSansSemibold.eot');
+    src: url('../fonts/OpenSansSemibold.eot') format('embedded-opentype'),
+         url('../fonts/OpenSansSemibold.woff2') format('woff2'),
+         url('../fonts/OpenSansSemibold.woff') format('woff'),
+         url('../fonts/OpenSansSemibold.ttf') format('truetype'),
+         url('../fonts/OpenSansSemibold.svg#OpenSansSemibold') format('svg');
+}
+
+@font-face {
+    font-family: 'OpenSansBold';
+    src: url('../fonts/OpenSansBold.eot');
+    src: url('../fonts/OpenSansBold.eot') format('embedded-opentype'),
+         url('../fonts/OpenSansBold.woff2') format('woff2'),
+         url('../fonts/OpenSansBold.woff') format('woff'),
+         url('../fonts/OpenSansBold.ttf') format('truetype'),
+         url('../fonts/OpenSansBold.svg#OpenSansBold') format('svg');
+}
+
+body{
+	font-family: 'OpenSansRegular';
+}
+/**********Variables**************/
+$txtColor : #00945f;
+$paraTxtColor : #616060;
+$maxWidth : 1171px;
+$grayTxtColor : #666666;
+$blackColor : #000000;
+$whiteColor : #fff;
+$border : 1px solid #c0c0c0;
+
+/*************Mixin***************/
+@mixin headingCode($headingColor){
+	color: $headingColor; font-size: 34px; font-family: 'OpenSansBold'; line-height: 34px;
+}
+
+@mixin subheadingCode{
+	color: #2b2b2b; font-size: 18px; font-weight: normal; font-family: 'OpenSansBold'; line-height: 18px;
+}
+
+@mixin paragraphCode{
+	color: $paraTxtColor; font-size: 16px; line-height: 24px;
+}
+
+@mixin commonBtn($pad,$fontSize){
+	 padding:$pad; font-size: $fontSize; font-family: 'OpenSansSemibold';
+}
+
+@mixin commonCode{
+	max-width: $maxWidth; margin: auto; padding:0 16px;
+}
+
+/*************Common Code********/
+.btnComman{
+	background-color: #00d158; color: $whiteColor;border-radius: 5px;cursor: pointer; border: none; font-weight: normal; font-style: normal;
+}
+.getButton{
+	@include commonBtn(8px 22px,13px);
+}
+p{@include paragraphCode;}
+h3{font-family: 'OpenSansBold'; font-size: 34px;}
+h4{@include subheadingCode;}
+h5{font-family: 'OpenSansSemibold'; font-size: 16px; color:$whiteColor; }
+
+
+/*************SCSS**************/
+
+.outer-page{
+	.inner-page{
+	 	max-width:100%; margin: auto;
+	 	width: 100%;
+	 	background-color: $blackColor;
+	 	header{
+	 		display: flex;    
+	  		justify-content: space-between;
+	  		align-items:center;
+	  		padding: 14px 16px;
+	  		max-width:$maxWidth; margin: auto;
+	  		.logo-sec{
+
+	  		}
+	  		.nav-sec{
+	  			
+	  			nav{
+	  				display: inline-block;
+	  				ul{
+	  					li{
+	  						display: inline-block; 
+	  						a{
+	  							color: $whiteColor; font-size: 14px; font-weight: normal; text-decoration: none; padding: 0 30px 0 20px;
+	  						}
+	  					}
+	  				}
+	  			}
+	  			.getstarted-sec{
+	  				display: inline-block;
+	  			}
+	  		}
+	 	} 
+	 	
+ 		
+
+ 		.banner-section{
+ 			.banner-btnsec{
+ 				margin-top:30px;
+ 				.bannerButton{
+					@include commonBtn(14px 28px,15px);
+				}
+ 			}
+
+			.watch-video{
+				 font-family: 'OpenSansSemibold'; border:2px solid #00d158; border-radius: 5px;
+				 @include commonBtn(12px 20px 13px 48px,15px);
+				 text-decoration: none; color:#00d158; background-image: url("../images/watch-video.png"); background-repeat: no-repeat; background-position: 18px center; background-color: transparent; margin-left: 5px;
+			}
+ 		}
+	 	
+
+	 	.key-section{
+	 		 background-color: $whiteColor;
+	 		 .key-inner{ @include commonCode; display: flex;
+	 		 	.key-col{  position: relative; top: -67px; box-shadow: -40px 40px 34px -40px #d9d9d9;
+		 			text-align: center; width: 377px; border-radius: 20px; background-color: $whiteColor; min-height: 280px; padding: 54px 42px; margin-left: 30px;
+		 			&:first-child{ margin-left: 0;}
+		 			.chat-icon{ margin-bottom: 10px;}
+		 			h4{ margin-bottom: 10px;}
+		 			p{}
+		 		}
+	 		 }
+	 		
+	 	}
+
+	 	.our-mission{ background-color: #f3f3f3;
+	 		.our-missionInner{ @include commonCode; display: flex; padding: 74px 16px;
+	 			.our-missionLeft{
+	 				padding-right: 85px;
+		 			h3{ @include headingCode(#2b2b2b); margin-bottom: 10px;}
+		 			p{ margin-bottom: 24px; margin-top: 5px;}
+		 			.our-para{ font-size: 18px; color: #2b2b2b; line-height: 24px;}
+		 			.our-mission-cont{
+		 				.our-mission-contWrap{
+		 					background-image: url("../images/checkmark.png"); background-repeat: no-repeat; background-position: left 0;
+		 					padding: 3px 0px 0 40px
+		 				}
+		 			}
+		 		}
+		 		.our-missionRight{
+		 			img{ max-width: 100%;}
+		 		}
+	 		}
+	 		
+	 	}
+
+	 	.plan-sec{ background-color: $blackColor;
+	 		.plan-secInner{
+	 			@include commonCode; text-align: center; padding: 88px 0;
+	 			h3{ @include headingCode(#fff); margin-bottom: 25px; }
+	 			.plan-btn{
+	 				.planButton{
+						@include commonBtn(14px 30px,18px);
+					}
+	 			}
+	 		}
+	 	}
+
+	}
+
+	footer{
+		background-color: #0f0f0f;
+		.footer-inner{
+			max-width: $maxWidth; margin: auto; padding: 0 16px;
+			.footer-menu{
+				display: flex;padding: 50px 0; border-top: 1px solid #252525;border-bottom: 1px solid #252525;
+				.ft-menu-col{
+					margin-right: 80px;
+					&:last-child{ margin-right: 0;}
+					h5{ margin-bottom: 26px;}
+					&:last-child h5{ margin-bottom: 10px;}
+					ul{
+						li{
+							list-style-type: none; margin-bottom: 20px; line-height: 16px;
+							a{
+								font-size:14px; color: #979797; text-decoration: none; 
+								&:hover{ text-decoration: underline;}
+							}
+						}
+					}
+				}
+			}
+			.footer-para{
+				padding: 30px 0;
+				p{
+					color: #979797; font-size: 12px; font-weight: normal; line-height: 17px;
+				}
+			}
+			
+		}
+	}
+}
+
+
+
+
+/*********************Media CSS**********************/
+@media screen and (max-width: 1248px) {
+
+}
+
+@media screen and (max-width: 1180px) {
+	$maxWidth : 100%;
+	.outer-page{
+		footer{
+			.footer-inner{
+				max-width: $maxWidth;
+				.footer-menu{ padding: 20px 0;
+					.ft-menu-col{
+						  margin-right: 45px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 979px) {
+	$maxWidth : 100%;
+	@mixin commonCodeMob{
+		max-width: $maxWidth; display: block; 
+	}
+
+	.getButton{
+		padding: 8px 10px;
+    	font-size: 12px;
+	}
+	.outer-page{
+		.inner-page{
+			header{max-width: $maxWidth;
+				.nav-sec{
+					 nav{
+					 	 ul{
+					 	 	li{
+					 	 		a{
+					 	 		 padding: 0 8px 0 0px;
+					 	 		}
+					 	 	} 
+					 	 } 
+					 }
+				}
+			}
+
+			.key-section{
+				.key-inner{max-width: $maxWidth;
+					padding: 20px 16px;
+					.key-col{
+						top: 0;box-shadow: 0px 9px 34px 0px #d9d9d9; padding: 30px 10px;
+					}
+				} 
+			} 
+
+			.our-mission{
+				.our-missionInner{max-width: $maxWidth;
+					padding: 40px 16px;
+					.our-missionLeft{
+						padding-right: 15px;
+					}
+				}
+			}
+
+			.plan-sec{
+				.plan-secInner{max-width: $maxWidth;
+					padding: 40px 0;
+				}
+			} 
+		}
+		footer{
+			.footer-inner{
+				max-width: $maxWidth;
+				.footer-menu{ display: block; padding: 20px 0;
+					.ft-menu-col{
+						   display: inline-block; vertical-align: top; margin-right: 15px;
+					}
+				}
+			}
+		}
+	}   
+}
+/* On screens that are 767px or less */
+@media screen and (max-width: 767px) {
+	$maxWidth : 100%;
+
+	@mixin commonCodeMob{
+		max-width: $maxWidth; display: block; 
+	}
+
+	.skdslider .slide-desc > h2{ line-height: normal;}
+	.outer-page{
+		.inner-page{
+			header{@include commonCodeMob;
+				.logo-sec{ text-align: center;}
+				.nav-sec{
+					text-align: center;
+					.getstarted-sec{
+						display: block;
+					}
+					nav{
+						display: block; margin: 10px 0;
+						ul{
+							li{ display: block;}
+						} 		
+					} 
+				} 
+			}
+
+			.key-section{
+				.key-inner{
+					@include commonCodeMob; padding: 24px 16px;
+					.key-col{
+						top: 0; width: 100%; margin-left: 0; margin-bottom: 20px; box-shadow: 0px 9px 34px 0px #d9d9d9;
+					}
+				}
+			} 
+			.banner-section{
+				.watch-video{
+					background-size: 10%;background-color: #201d1da8; padding: 9px 9px 9px 25px; font-size: 12px;background-position:10px center
+				}
+				.banner-btnsec{
+					margin-top: 15px;
+					.bannerButton{
+						padding: 10px 14px;
+    					font-size: 12px;
+					}	
+				} 
+			}
+
+			.our-mission{
+				.our-missionInner{
+					padding: 20px 16px;
+					@include commonCodeMob;
+					.our-missionLeft{ 
+						.our-para{ font-size: 14px;}
+						h3{
+							font-size: 24px; line-height: 24px;
+						}
+					}
+					.our-missionRight{
+						img{ max-width: 100%;}
+					}
+				}	
+			} 
+
+			.plan-sec{
+				.plan-secInner{
+					padding: 40px 0;
+				}
+			} 
+		}
+
+		footer{
+			.footer-inner{
+				.footer-menu{
+					display: block;
+					padding: 20px 0;
+					.ft-menu-col{
+						h5{ margin-bottom: 10px;}
+						margin-right: 0;
+						margin-bottom: 30px;
+						ul{
+							li{ margin-bottom: 10px;}
+						} 
+					}
+				}
+			} 
+		}
+	}	
+}
